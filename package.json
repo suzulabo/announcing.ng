@@ -1,0 +1,21 @@
+{
+  "name": "announcing",
+  "private": true,
+  "engines": {
+    "node": "16",
+    "npm": "8"
+  },
+  "scripts": {
+    "-": "node -r esbuild-register scripts/index.ts"
+  },
+  "devDependencies": {
+    "@suzulabo/ttscripts": "^0.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-solid": "^0.6.1",
+    "prettier": "^2.6.2",
+    "typescript": "^4.7.3"
+  }
+}
