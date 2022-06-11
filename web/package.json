@@ -1,0 +1,15 @@
+{
+  "name": "announcing-web",
+  "private": true,
+  "engines": {
+    "node": "16",
+    "npm": "8"
+  },
+  "scripts": {
+    "vite:console": "vite -c console/vite.config.ts"
+  },
+  "devDependencies": {
+    "vite": "^2.9.11",
+    "vite-plugin-solid": "^2.2.6"
+  }
+}
