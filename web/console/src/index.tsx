@@ -1,3 +1,11 @@
 import { render } from 'solid-js/web';
+import { BaseStyle } from '#base/BaseStyle';
 
-render(() => <>hello</>, document.getElementById('root') as HTMLElement);
+render(
+  () => (
+    <>
+      <BaseStyle /> hello
+    </>
+  ),
+  document.getElementById('root') as HTMLElement
+);

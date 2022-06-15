@@ -25,6 +25,14 @@
         "@typescript-eslint/require-await": "warn",
         "import/order": ["warn", { "alphabetize": { "order": "asc" } }],
         "import/no-extraneous-dependencies": "error"
+      },
+      "settings": {
+        "import/resolver": {
+          "typescript": {
+            "alwaysTryTypes": true,
+            "project": "**/tsconfig.json"
+          }
+        }
       }
     }
   ]
