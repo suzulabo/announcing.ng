@@ -12,6 +12,16 @@ const entries: ScriptEntries = [
   ['ts-check.scripts', Cmd('tsc --noEmit', 'scripts')],
   ['ts-check.web.console', Cmd('tsc --noEmit', 'web/console')],
   ['ts-check', RunS(['ts-check.scripts', 'ts-check.web.console'])],
+
+  // web console
+  [
+    'console.dev',
+    Cmd('pnpm exec vite -c console/vite.config.ts', 'web/console'),
+  ],
+  [
+    'console.build',
+    Cmd('pnpm exec vite build -c console/vite.config.ts', 'web/console'),
+  ],
 ];
 
 const name = process.argv[2];

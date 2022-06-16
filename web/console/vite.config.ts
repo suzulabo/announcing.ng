@@ -1,9 +1,10 @@
 import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
   root: 'console',
-  plugins: [solidPlugin()],
+  plugins: [tsconfigPaths(), solidPlugin()],
   build: {
     target: 'esnext',
     polyfillDynamicImport: false,

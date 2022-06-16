@@ -5,15 +5,13 @@
     "node": "16",
     "npm": "8"
   },
-  "scripts": {
-    "vite:console": "vite -c console/vite.config.ts"
-  },
   "devDependencies": {
     "@types/node": "^17.0.42",
     "solid-js": "^1.4.4",
     "the-new-css-reset": "^1.6.1",
     "typescript": "^4.7.3",
     "vite": "^2.9.11",
-    "vite-plugin-solid": "^2.2.6"
+    "vite-plugin-solid": "^2.2.6",
+    "vite-tsconfig-paths": "^3.5.0"
   }
 }
