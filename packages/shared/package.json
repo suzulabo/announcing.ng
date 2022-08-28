@@ -1,0 +1,14 @@
+{
+  "name": "@announcing/shared",
+  "private": true,
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "clean": "rm -rf build",
+    "build": "tsc"
+  }
+}
