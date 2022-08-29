@@ -7,7 +7,7 @@ export interface Match {
 const _match = <T extends Match>(
   m: T,
   _p: string[],
-  params: Record<string, string>,
+  params: Record<string, string>
 ): T | undefined => {
   const p = [..._p];
 
@@ -40,10 +40,9 @@ const _match = <T extends Match>(
 
 export const pathMatcher = <T extends Match>(
   matches: T[],
-  path: string,
+  path: string
 ): { match: T; params: Record<string, string> } | undefined => {
-  const pathes = path == '/' ? ['/', ''] : path.split('/');
-  pathes.shift(); // remove first slash
+  const pathes = path == '/' ? [''] : path.split('/').slice(1);
   for (const root of matches) {
     const params = {} as { [k: string]: string };
     const match = _match(root, pathes, params);

@@ -9,6 +9,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "clean": "rm -rf build",
-    "build": "tsc"
+    "build": "tsc",
+    "test": "jest"
   }
 }
