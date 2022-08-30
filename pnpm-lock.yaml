@@ -40,7 +40,7 @@ importers:
 
   packages/cloudflare:
     specifiers:
-      '@announcing/shared': workspace:../shared
+      '@announcing/shared': workspace:*
       '@cloudflare/workers-types': ^3.14.1
       wrangler: ^2.0.27
     dependencies:
