@@ -1,9 +1,21 @@
 import { pathMatcher } from '@announcing/shared';
+import { FetchMatch } from './common/FetchMatch';
+import { indexHandler } from './fetches';
 
-pathMatcher([], '');
+const matches: FetchMatch[] = [
+  {
+    pattern: '',
+    handle: indexHandler,
+  },
+];
 
-const fetch = async (request: Request) => {
-  return Promise.resolve(new Response(`hihi: ${request.url}`));
+const fetch = (request: Request) => {
+  const m = pathMatcher(matches, new URL(request.url).pathname);
+  if (m) {
+    return m.match.handle(request, m.params);
+  } else {
+    return new Response('not found', { status: 404 });
+  }
 };
 
 export default { fetch };

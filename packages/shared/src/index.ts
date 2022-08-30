@@ -1,1 +1,1 @@
-export * from './path-matcher';
+export * from './pathMatcher';

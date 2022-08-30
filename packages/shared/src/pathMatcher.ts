@@ -3,6 +3,7 @@ export interface Match {
   name?: string;
   nexts?: this[];
 }
+export type MatchParams = Record<string, string>;
 
 const _match = <T extends Match>(
   m: T,
