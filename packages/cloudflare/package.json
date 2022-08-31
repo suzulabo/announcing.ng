@@ -2,6 +2,7 @@
   "name": "announcing-cloudflare",
   "private": true,
   "scripts": {
+    "dev": "wrangler dev --local",
     "start": "wrangler dev",
     "deploy": "wrangler publish",
     "test": "jest"
