@@ -27,7 +27,20 @@
         "@typescript-eslint/no-misused-promises": "error",
         "require-await": "off",
         "@typescript-eslint/require-await": "warn",
-        "import/order": ["warn", { "alphabetize": { "order": "asc" } }],
+        "import/order": [
+          "warn",
+          {
+            // https://stackoverflow.com/questions/56457410/how-to-config-vscodes-organize-imports-order
+            "groups": [
+              "index",
+              "sibling",
+              "parent",
+              "internal",
+              "external",
+              "builtin"
+            ]
+          }
+        ],
         "import/no-extraneous-dependencies": "error"
       },
       "settings": {
