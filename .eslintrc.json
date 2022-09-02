@@ -28,17 +28,20 @@
         "require-await": "off",
         "@typescript-eslint/require-await": "warn",
         "import/order": [
-          "warn",
+          "error",
           {
-            // https://stackoverflow.com/questions/56457410/how-to-config-vscodes-organize-imports-order
             "groups": [
-              "index",
-              "sibling",
-              "parent",
-              "internal",
+              "builtin",
               "external",
-              "builtin"
-            ]
+              "parent",
+              "sibling",
+              "index",
+              "object",
+              "type"
+            ],
+            "alphabetize": {
+              "order": "asc"
+            }
           }
         ],
         "import/no-extraneous-dependencies": "error"
