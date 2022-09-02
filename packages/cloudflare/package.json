@@ -4,9 +4,10 @@
   "scripts": {
     "dev": "wrangler dev --local",
     "start": "wrangler dev",
-    "build": "wrangler publish --tsconfig tsconfig.build.json --dry-run --outdir dist",
-    "deploy": "wrangler publish --tsconfig tsconfig.build.json --minify",
-    "test": "jest"
+    "build": "tsc && wrangler publish --tsconfig tsconfig.build.json --dry-run --outdir dist && du -h dist/main.js",
+    "deploy": "tsc && wrangler publish --tsconfig tsconfig.build.json --minify",
+    "test": "jest",
+    "lint": "eslint src && prettier --check src"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^3.14.1",

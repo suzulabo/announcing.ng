@@ -10,6 +10,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "build": "tsc -p tsconfig.build.json",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint src && prettier --check src"
   }
 }

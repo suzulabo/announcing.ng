@@ -32,12 +32,19 @@
           {
             "groups": [
               "builtin",
+              "internal",
               "external",
               "parent",
               "sibling",
               "index",
               "object",
               "type"
+            ],
+            "pathGroups": [
+              {
+                "pattern": "@/**",
+                "group": "internal"
+              }
             ],
             "alphabetize": {
               "order": "asc"
