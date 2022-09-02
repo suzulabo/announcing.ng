@@ -1,8 +1,7 @@
 /** @type {import('@jest/types').Config.InitialOptions} */
 const config = {
   preset: 'ts-jest',
-
-  rootDir: 'test',
+  rootDir: 'src',
   testRegex: '.+\\.test\\.tsx?$',
 };
 
