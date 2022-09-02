@@ -37,9 +37,11 @@ importers:
       '@announcing/shared': workspace:*
       '@cloudflare/workers-types': ^3.14.1
       jest-environment-miniflare: ^2.7.1
+      jose: ^4.9.2
       wrangler: ^2.0.27
     dependencies:
       '@announcing/shared': link:../shared
+      jose: 4.9.2
     devDependencies:
       '@cloudflare/workers-types': 3.14.1
       jest-environment-miniflare: 2.7.1
@@ -3065,6 +3067,10 @@ packages:
       - supports-color
       - ts-node
     dev: true
+
+  /jose/4.9.2:
+    resolution: {integrity: sha512-EqKvu2PqJCD3Jrg3PvcYZVS7D21qMVLSYMDAFcOdGUEOpJSLNtJO7NjLANvu3SYHVl6pdP2ff7ve6EZW2nX7Nw==}
+    dev: false
 
   /js-tokens/4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}

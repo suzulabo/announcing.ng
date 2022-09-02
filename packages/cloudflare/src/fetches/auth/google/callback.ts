@@ -1,5 +1,10 @@
 import { BadRequestResponse } from '@/common/BadRequestResponse';
 import { FetchHandler } from '@/common/FetchMatch';
+import { createRemoteJWKSet, jwtVerify } from 'jose';
+
+const JWKS = createRemoteJWKSet(
+  new URL('https://www.googleapis.com/oauth2/v3/certs')
+);
 
 export const authGoogleCallbackHandler: FetchHandler = async (
   req,
@@ -25,9 +30,14 @@ export const authGoogleCallbackHandler: FetchHandler = async (
     body: formData,
   });
 
-  const body = await res.text();
+  const json = (await res.json()) as { id_token: string };
+  const jwt = json.id_token;
 
-  console.log({ body });
-
-  return new Response(body);
+  const { payload, protectedHeader } = await jwtVerify(jwt, JWKS, {
+    issuer: 'https://accounts.google.com',
+    audience: env.AUTH_GOOGLE_CLIENT_ID,
+  });
+  return new Response(
+    JSON.stringify({ payload, protectedHeader }, undefined, 2)
+  );
 };
