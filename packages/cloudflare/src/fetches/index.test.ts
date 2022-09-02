@@ -1,7 +1,7 @@
-import main from '../../src/index';
+import { indexHandler } from '.';
 
 it('basic', async () => {
   const req = new Request('http://localhost/');
-  const res = await main.fetch(req);
+  const res = await indexHandler(req);
   expect(await res.text()).toBe('hello');
 });

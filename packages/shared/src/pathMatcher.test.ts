@@ -1,4 +1,4 @@
-import { Match, pathMatcher } from '../src';
+import { Match, pathMatcher } from './pathMatcher';
 
 it('basic', () => {
   type RouteMatch = Match & {

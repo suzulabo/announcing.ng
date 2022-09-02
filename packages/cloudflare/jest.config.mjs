@@ -3,7 +3,7 @@ const config = {
   testEnvironment: 'miniflare',
   preset: 'ts-jest/presets/js-with-ts',
 
-  rootDir: 'test',
+  rootDir: 'src',
   testRegex: '.+\\.test\\.tsx?$',
 };
 

@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "wrangler dev --local",
     "start": "wrangler dev",
-    "deploy": "wrangler publish",
+    "build": "wrangler publish --tsconfig tsconfig.build.json --dry-run --outdir dist",
+    "deploy": "wrangler publish --tsconfig tsconfig.build.json --minify",
     "test": "jest"
   },
   "devDependencies": {
