@@ -1,8 +1,8 @@
 import { WorkerEnv } from '@/common/WorkerEnv';
-import { indexHandler } from '.';
+import main from '@/main';
 
 it('basic', async () => {
   const req = new Request('http://localhost/');
-  const res = await indexHandler(req, {}, {} as WorkerEnv);
+  const res = await main.fetch(req, {} as WorkerEnv);
   expect(await res.text()).toBe('hello');
 });

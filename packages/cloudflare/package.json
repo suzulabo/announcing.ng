@@ -6,7 +6,7 @@
     "start": "wrangler dev",
     "build": "tsc && wrangler publish --tsconfig tsconfig.build.json --dry-run --outdir dist && du -h dist/main.js",
     "deploy": "tsc && wrangler publish --tsconfig tsconfig.build.json --minify",
-    "test": "jest",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "lint": "eslint src && prettier --check src"
   },
   "devDependencies": {
