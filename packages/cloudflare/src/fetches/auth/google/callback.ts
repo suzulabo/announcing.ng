@@ -1,6 +1,7 @@
 import { FetchHandler } from '@/common/FetchMatch';
+import { getRequestHash } from '@/common/RequestHash';
 import { BadRequestResponse } from '@/common/Responses';
-import { createRemoteJWKSet, jwtVerify } from 'jose';
+import { base64url, createRemoteJWKSet, jwtVerify } from 'jose';
 
 const JWKS = createRemoteJWKSet(
   new URL('https://www.googleapis.com/oauth2/v3/certs')
@@ -15,8 +16,18 @@ export const authGoogleCallbackHandler: FetchHandler = async (
 
   const url = new URL(req.url);
   const code = url.searchParams.get('code');
-  if (!code) {
+  const state = url.searchParams.get('state');
+  if (!code || !state) {
     return BadRequestResponse;
+  }
+
+  {
+    const reqHash = await getRequestHash(req);
+    await jwtVerify(state, base64url.decode(env.HS256_SIGN_KEY), {
+      algorithms: ['HS256'],
+      issuer: url.origin,
+      audience: `urn:reqhash:${base64url.encode(reqHash)}`,
+    });
   }
 
   const formData = new FormData();

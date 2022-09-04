@@ -11,14 +11,12 @@ export const authGoogleIndexHandler: FetchHandler = async (
 
   const url = new URL(req.url);
 
-  const hash = await getRequestHash(req);
-  const jwt = await new SignJWT({
-    reqhash: base64url.encode(hash),
-  })
+  const reqHash = await getRequestHash(req);
+  const jwt = await new SignJWT({})
     .setProtectedHeader({ alg: 'HS256' })
     .setIssuedAt()
     .setIssuer(url.origin)
-    .setAudience(url.origin)
+    .setAudience(`urn:reqhash:${base64url.encode(reqHash)}`)
     .setExpirationTime('10m')
     .sign(base64url.decode(workerEnv.HS256_SIGN_KEY));
 
