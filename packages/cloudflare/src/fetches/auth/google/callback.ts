@@ -1,5 +1,5 @@
-import { BadRequestResponse } from '@/common/BadRequestResponse';
 import { FetchHandler } from '@/common/FetchMatch';
+import { BadRequestResponse } from '@/common/Responses';
 import { createRemoteJWKSet, jwtVerify } from 'jose';
 
 const JWKS = createRemoteJWKSet(
