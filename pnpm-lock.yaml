@@ -34,13 +34,13 @@ importers:
 
   packages/cloudflare:
     specifiers:
-      '@announcing/shared': workspace:*
       '@cloudflare/workers-types': ^3.14.1
+      '@suzulabo/path-matcher': ^0.0.0
       jest-environment-miniflare: ^2.7.1
       jose: ^4.9.2
       wrangler: ^2.0.27
     dependencies:
-      '@announcing/shared': link:../shared
+      '@suzulabo/path-matcher': 0.0.0
       jose: 4.9.2
     devDependencies:
       '@cloudflare/workers-types': 3.14.1
@@ -49,6 +49,7 @@ importers:
 
   packages/pages/console:
     specifiers:
+      '@cloudflare/workers-types': ^3.14.1
       solid-js: ^1.5.1
       vite: ^3.0.9
       vite-plugin-solid: ^2.3.0
@@ -56,6 +57,7 @@ importers:
     dependencies:
       solid-js: 1.5.4
     devDependencies:
+      '@cloudflare/workers-types': 3.14.1
       vite: 3.0.9
       vite-plugin-solid: 2.3.0_solid-js@1.5.4+vite@3.0.9
       wrangler: 2.0.28
@@ -1012,6 +1014,11 @@ packages:
     dependencies:
       '@sinonjs/commons': 1.8.3
     dev: true
+
+  /@suzulabo/path-matcher/0.0.0:
+    resolution: {integrity: sha512-D1wayildIauG97+X7f74lcw0C3TG3iSTE9YNBB80GAuM8XVVyUtI5akukGYfVZsN/K2iRDpH5b7KB3PRr+vrZA==}
+    engines: {node: '>=16'}
+    dev: false
 
   /@types/babel__core/7.1.19:
     resolution: {integrity: sha512-WEOTgRsbYkvA/KCsDwVEGkd7WAr1e3g31VHQ8zy5gul/V1qKullU/BU5I68X5v7V3GnB9eotmom4v5a5gjxorw==}

@@ -1,4 +1,4 @@
-import { Match, MatchParams } from '@announcing/shared';
+import { Match, MatchParams } from '@suzulabo/path-matcher';
 import { WorkerEnv } from './WorkerEnv';
 
 export type FetchHandler = (

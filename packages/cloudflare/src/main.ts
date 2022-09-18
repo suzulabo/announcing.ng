@@ -1,4 +1,4 @@
-import { pathMatcher } from '@announcing/shared';
+import { pathMatcher } from '@suzulabo/path-matcher';
 import { FetchMatch } from './common/FetchMatch';
 import { WorkerEnv } from './common/WorkerEnv';
 import { indexHandler } from './fetches';

@@ -1,15 +1,14 @@
 {
-  "name": "vite-template-solid",
-  "version": "0.0.0",
-  "description": "",
+  "name": "announcing-pages-console",
+  "private": true,
   "scripts": {
     "start": "vite",
     "dev": "wrangler pages dev -- vite",
     "build": "vite build",
     "serve": "vite preview"
   },
-  "license": "MIT",
   "devDependencies": {
+    "@cloudflare/workers-types": "^3.14.1",
     "vite": "^3.0.9",
     "vite-plugin-solid": "^2.3.0",
     "wrangler": "^2.0.27"
